@@ -1,55 +1,71 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT
+Version change: 1.0.0 → 1.1.1
+Modified principles: None
+Added sections: None
+Removed sections: None
+Updated sections: Success Criteria (changed from "at least 10 complete chapters" to "exactly 6 polished, interactive chapters")
+Templates requiring updates: None
+Follow-up TODOs: None
+-->
+
+# Physical AI & Humanoid Robotics – A Complete Open-Source Course Book Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Technical Accuracy First
+Every concept, formula, code example, hardware spec, and research claim must be correct and verifiable. All content must be technically accurate and factually correct with verifiable sources and citations.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Learn-by-doing Pedagogy
+Every chapter must contain at least one runnable code example (Python/ROS2), one Mermaid diagram, and one short quiz/exercise. The learning experience must be hands-on with practical implementation opportunities.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Beginner-to-Advanced Progression
+Content must start from zero robotics background and end with the ability to design a simple humanoid subsystem. The progression must be clear and accessible to beginners while advancing to complex topics.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Open Source & Reproducible
+All code, datasets, CAD files, and simulation environments must be free and linkable. The entire course must be built on open-source tools and resources that students can access and reproduce.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Real-World Grounding
+Every major section must reference at least one real humanoid robot (Atlas, Tesla Bot, Figure 01, Ameca, Unitree H1, etc.) or open-source projects like Poppy, InMoov, OpenDynamic Robot Initiative. Theory must be grounded in real implementations.
 
-### [PRINCIPLE_6_NAME]
+### Future-Proof Content
+Prefer up-to-date (2024–2025) sources, frameworks, and hardware trends. Content must remain current and relevant with the latest developments in humanoid robotics.
 
+## Key Standards
 
-[PRINCIPLE__DESCRIPTION]
+Book title: "Physical AI & Humanoid Robotics"
+Site built with Docusaurus v3 + classic preset + MDX v2/v3
+All chapters written in .mdx inside /docs folder with proper frontmatter and sidebar ordering
+Every chapter must include:
+   • At least 2–3 Mermaid diagrams (kinematics, control loops, sensor fusion, etc.)
+   • 5–15 line runnable Python/ROS 2 code snippets (copy-paste ready)
+   • End-of-chapter interactive quiz (simple React component or Markdown checkboxes)
+   • "Real Robot Spotlight" section with photos/videos and specs
+Citation style: IEEE numeric style with clickable links (Docusaurus built-in support)
+Images: all diagrams self-hosted in /static/img with meaningful alt text (accessibility)
+Mobile-first & fast: Lighthouse score ≥ 90 on performance and accessibility
+Full-text search enabled (DocSearch or built-in Algolia free tier)
+Licensing: CC-BY-SA-4.0 for text, MIT for code
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+Entire site must build with npm run build and deploy automatically via GitHub Actions to GitHub Pages
+No paid third-party services except free tiers (GitHub, Algolia DocSearch, etc.)
+Total repository size < 500 MB (compress videos or embed YouTube/Vimeo)
+All generated content must be committed to Git (no external blobs)
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Success Criteria
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Live URL working on GitHub Pages with custom domain optional
+Exactly 6 polished, interactive chapters (as defined in current spec)
+npm run build succeeds with zero errors/warnings
+All Mermaid diagrams render correctly
+All code examples run in Colab or local ROS2 environment
+Site passes mobile-friendly test and accessibility check
+Judges can understand the full learning path in < 3 minutes
+README contains one-click preview and contribution guide
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+All development must align with the core principles and standards. Every contribution must verify compliance with technical accuracy, learn-by-doing pedagogy, and open-source reproducibility requirements. Content changes must be validated against real-world examples and maintain beginner-to-advanced progression. All PRs/reviews must verify compliance with Docusaurus v3 standards, code examples, diagrams, and accessibility requirements.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.1.1 | **Ratified**: 2025-12-09 | **Last Amended**: 2025-12-09

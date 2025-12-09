@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- JavaScript/TypeScript, Node.js v18+ for Docusaurus v3, Python 3.8+ for ROS 2 examples + Docusaurus v3 with classic preset, React v18, Node.js, npm, MDX v2/v3 (001-specify-project-ai)
+- Static file storage in Git repository, images in /static/img, documentation in /docs (001-specify-project-ai)
+
+## Recent Changes
+- 001-specify-project-ai: Added JavaScript/TypeScript, Node.js v18+ for Docusaurus v3, Python 3.8+ for ROS 2 examples + Docusaurus v3 with classic preset, React v18, Node.js, npm, MDX v2/v3

@@ -1,0 +1,90 @@
+---
+title: Performance Monitoring
+sidebar_label: Performance Monitoring
+sidebar_position: 997
+---
+
+# Performance Monitoring with Lighthouse
+
+This document outlines the Lighthouse performance monitoring setup for the Physical AI & Humanoid Robotics course book.
+
+## Performance Targets
+
+Our site aims to maintain high performance standards with the following targets:
+
+- **Performance Score**: ≥ 90
+- **Accessibility Score**: ≥ 90
+- **Best Practices Score**: ≥ 90
+- **SEO Score**: ≥ 90
+
+### Core Web Vitals Targets
+
+- **First Contentful Paint (FCP)**: ≤ 1.5 seconds
+- **Largest Contentful Paint (LCP)**: ≤ 2.5 seconds
+- **Cumulative Layout Shift (CLS)**: ≤ 0.1
+- **Total Blocking Time (TBT)**: ≤ 200ms
+- **Speed Index**: ≤ 3 seconds
+
+## Running Performance Audits
+
+### Local Audits
+
+To run a Lighthouse audit locally:
+
+```bash
+npm run audit
+```
+
+This command will build the site and run Lighthouse audits against it.
+
+### Build + Audit
+
+To build the site and run audits in one command:
+
+```bash
+npm run audit:build
+```
+
+### Manual Lighthouse Testing
+
+You can also run audits manually using the Chrome DevTools Lighthouse panel or the command line:
+
+```bash
+npx @lhci/cli autorun
+```
+
+## Configuration
+
+The Lighthouse configuration is defined in `lighthouserc.json` and includes:
+
+- Performance budgets with minimum scores
+- Assertion rules for specific metrics
+- Multiple runs for consistent results
+- Desktop preset for consistent testing
+
+## Continuous Monitoring
+
+Performance monitoring is integrated into the development workflow to ensure:
+
+- Performance regressions are caught early
+- All PRs meet performance standards before merging
+- Consistent user experience across all devices
+
+## Performance Optimization Guidelines
+
+To maintain high performance scores:
+
+1. **Optimize Images**: Use WebP format where possible and compress images
+2. **Minimize JavaScript**: Reduce bundle sizes and eliminate unused code
+3. **Efficient CSS**: Avoid CSS bloat and use efficient selectors
+4. **Resource Loading**: Implement proper loading strategies for assets
+5. **Caching**: Use proper caching headers for static resources
+
+## Troubleshooting Performance Issues
+
+If Lighthouse scores fall below targets:
+
+1. Check the audit report for specific recommendations
+2. Focus on opportunities with highest potential savings
+3. Review recent changes that may have impacted performance
+4. Test on different network conditions and devices

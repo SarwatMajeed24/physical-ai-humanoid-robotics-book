@@ -1,0 +1,71 @@
+---
+title: Accessibility Guidelines
+sidebar_label: Accessibility Guidelines
+sidebar_position: 999
+---
+
+# Accessibility Guidelines
+
+This document outlines the accessibility requirements and best practices for the Physical AI & Humanoid Robotics course book.
+
+## Alt Text Requirements
+
+All images must include descriptive alt text that serves the following purposes:
+
+1. **Descriptive Context**: Alt text should describe the content and function of the image for users who cannot see it.
+2. **Educational Value**: For diagrams, charts, and technical illustrations, include key information that would be gained from viewing the image.
+3. **Technical Details**: For robot photos, specify the model, key features, and any relevant specifications.
+
+### Alt Text Examples
+
+**Good Examples:**
+- `![ROS 2 architecture diagram showing nodes, topics, and services communication patterns](img/ros2-architecture.png)`
+- `![Atlas robot from Boston Dynamics performing a backflip with labeled joints and actuators](img/atlas-robot-backflip.png)`
+- `![Gazebo simulation environment with humanoid robot navigating through obstacle course](img/gazebo-simulation.png)`
+
+**Avoid:**
+- `![Robot](img/robot.png)` - Too vague
+- `![Diagram](img/diagram.png)` - Not descriptive
+- Empty alt text for informative images: `![](img/image.png)` - Only acceptable for decorative images
+
+## WCAG Compliance
+
+Our course book aims to meet WCAG 2.1 AA standards:
+
+- **Color Contrast**: All text must have sufficient contrast against its background (minimum 4.5:1 for normal text, 3:1 for large text)
+- **Keyboard Navigation**: All interactive elements must be accessible via keyboard
+- **Focus Indicators**: Visible focus indicators for all interactive elements
+- **Semantic HTML**: Proper heading hierarchy (H1 → H6) and semantic elements
+- **Screen Reader Compatibility**: All content must be accessible to screen readers
+
+## Technical Implementation
+
+### Code Syntax Highlighting
+- Python and ROS2 code snippets have syntax highlighting enabled
+- Code blocks include proper language identifiers (```python, ```bash, ```cpp)
+
+### Diagrams and Visual Content
+- Mermaid diagrams are accessible through proper alt text and descriptions
+- Complex diagrams should include detailed captions explaining key elements
+
+### Interactive Elements
+- Markdown checkbox quizzes are keyboard accessible
+- All buttons and links have proper ARIA labels
+- Form elements have associated labels
+
+## Content Guidelines
+
+### Headings Structure
+- Each page should have one H1 (the page title)
+- Use proper heading hierarchy (H2 → H3 → H4)
+- Headings should be descriptive and hierarchical
+
+### Link Text
+- Use descriptive link text instead of generic "click here"
+- Links should make sense out of context
+- External links should be clearly identified
+
+### Media Accessibility
+- Videos should have captions and transcripts
+- Audio content should have transcripts
+- Interactive elements should have text alternatives

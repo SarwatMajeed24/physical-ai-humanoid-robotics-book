@@ -1,0 +1,206 @@
+---
+title: Chapter Template Guide
+sidebar_label: Chapter Template Guide
+sidebar_position: 1
+description: Guide for creating course chapters with required structure elements
+keywords: [physical ai, robotics, template, mdx, components]
+---
+
+# Chapter Template Guide
+
+This guide explains how to create course chapters with all the required structure elements for the Physical AI & Humanoid Robotics course book.
+
+## Required Structure Elements
+
+Each chapter should follow this structure:
+
+### 1. Frontmatter
+```md
+---
+title: Your Chapter Title
+sidebar_label: Your Chapter Title
+sidebar_position: X
+description: Brief description of the chapter content
+keywords: [physical ai, robotics, humanoid, specific-topic]
+---
+```
+
+### 2. Imports
+Import the required components at the top of your MDX file:
+
+```md
+import { ChapterLayout, ChapterSection, RobotSpotlight, QuizSection } from '@site/src/components/ChapterLayout';
+import { MermaidDiagram, Citation } from '@site/src/components/EducationalComponents';
+import { PythonCodeBlock, ROS2CodeBlock } from '@site/src/components/CourseChapter';
+```
+
+### 3. Chapter Layout
+Use the ChapterLayout component to wrap your content:
+
+```md
+<ChapterLayout title="Your Chapter Title" description="Brief description">
+  <!-- Your chapter content goes here -->
+</ChapterLayout>
+```
+
+## Content Sections
+
+### Learning Objectives
+```md
+## Learning Objectives
+
+After completing this chapter, you will be able to:
+
+- Objective 1
+- Objective 2
+- Objective 3
+```
+
+### Introduction
+Start with an introduction section that provides context.
+
+### Core Concepts
+Explain the main concepts with examples.
+
+### Code Examples
+Use the appropriate code block components:
+
+```jsx
+<PythonCodeBlock title="Python Code Example">
+# This is a 5-15 line runnable Python/ROS 2 code snippet
+import rclpy
+from rclpy.node import Node
+
+class MinimalPublisher(Node):
+    def __init__(self):
+        super().__init__('minimal_publisher')
+        self.publisher = self.create_publisher(String, 'topic', 10)
+        self.timer = self.create_timer(0.5, self.timer_callback)
+
+    def timer_callback(self):
+        msg = String()
+        msg.data = 'Hello World'
+        self.publisher.publish(msg)
+</PythonCodeBlock>
+```
+
+```jsx
+<ROS2CodeBlock title="ROS 2 C++ Code Example">
+// This is a 5-15 line runnable C++/ROS 2 code snippet
+#include <rclcpp/rclcpp.hpp>
+#include <std_msgs/msg/string.hpp>
+
+using std::placeholders::_1;
+
+class MinimalPublisher : public rclcpp::Node
+{
+public:
+  MinimalPublisher() : Node("minimal_publisher") {
+    publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
+  }
+
+private:
+  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
+};
+</ROS2CodeBlock>
+```
+
+### Diagrams
+Include Mermaid diagrams to visualize concepts:
+
+```jsx
+<MermaidDiagram chart="graph LR; A[Robot] --> B[Environment]; B --> C[Perception]; C --> D[Decision]; D --> A;" altText="Diagram showing robot-environment interaction loop" title="Robot-Environment Interaction" />
+```
+
+### Robot Spotlight
+Highlight real robots with the RobotSpotlight component:
+
+```jsx
+<RobotSpotlight robotName="Example Robot" image="/img/robot-image.png" description="Description of the robot and its significance." />
+```
+
+### Knowledge Check
+Include quizzes to test understanding:
+
+```jsx
+<QuizSection question="What is the primary function of a humanoid robot's perception system?" options={["To move the robot's limbs", "To interpret sensory data from the environment", "To generate power for the robot", "To store robot configuration data"]} correctAnswer={1} />
+```
+
+### References
+Include proper citations:
+
+```jsx
+<Citation id={1} authors={["A. Author", "B. Author"]} title="Title of Research Paper" journal="IEEE Transactions on Robotics" year="2023" />
+```
+
+### Summary
+End with a summary of key points.
+
+## Complete Example
+
+Here's a complete example of how to structure a chapter:
+
+```md
+---
+title: Example Chapter
+sidebar_label: Example Chapter
+sidebar_position: 1
+description: An example chapter demonstrating the required structure
+keywords: [physical ai, robotics, example]
+---
+
+import { ChapterLayout, RobotSpotlight, QuizSection } from '@site/src/components/ChapterLayout';
+import { MermaidDiagram, Citation } from '@site/src/components/EducationalComponents';
+import { PythonCodeBlock } from '@site/src/components/CourseChapter';
+
+# Example Chapter Title
+
+<ChapterLayout title="Example Chapter Title" description="This chapter demonstrates the required structure for course chapters.">
+
+## Learning Objectives
+
+After completing this chapter, you will be able to:
+- Understand the chapter structure
+- Apply the required components
+- Create effective content
+
+## Introduction
+
+Introduction content goes here...
+
+## Core Concepts
+
+Content explaining core concepts...
+
+<PythonCodeBlock title="Python Code Example">
+# Your code example here
+</PythonCodeBlock>
+
+<MermaidDiagram chart="graph TD; A[Start] --> B[Process]; B --> C[End];" altText="Simple process diagram" title="Process Diagram" />
+
+## Robot Spotlight
+
+<RobotSpotlight robotName="Example Robot" image="/img/robot-image.png" description="Description of the robot." />
+
+## Knowledge Check
+
+<QuizSection question="Sample quiz question?" options={["Option A", "Option B", "Option C", "Option D"]} correctAnswer={1} />
+
+## References
+
+<Citation id={1} authors={["A. Author"]} title="Research Paper Title" journal="Journal Name" year="2023" />
+
+## Summary
+
+Summary of key points covered in the chapter.
+
+</ChapterLayout>
+```
+
+## Notes
+
+- All components are designed to be accessible and responsive
+- Code examples should be 5-15 lines and runnable
+- Diagrams should include descriptive alt text
+- Citations follow IEEE format
+- Quiz questions should test understanding of key concepts

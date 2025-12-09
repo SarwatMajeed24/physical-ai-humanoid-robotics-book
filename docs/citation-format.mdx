@@ -1,0 +1,84 @@
+---
+title: Citation Format Guide
+sidebar_label: Citation Format
+sidebar_position: 998
+---
+
+# IEEE Citation Format Guide
+
+This document outlines the IEEE-style citation format to be used throughout the Physical AI & Humanoid Robotics course book.
+
+## IEEE Citation Style
+
+All references in the course book must follow the IEEE citation style. Citations should be numbered sequentially in the order they appear in the text and formatted as follows:
+
+### In-Text Citations
+
+Use numbered citations in square brackets, like this: [1], [2], or multiple citations [1], [3], [5]. For multiple citations, list them in ascending order with commas separating them.
+
+### Reference List Format
+
+References should appear at the end of each chapter or document in the following format:
+
+```
+[1] A. Author, B. Author, and C. Author, "Title of paper," Journal Name, vol. X, no. Y, pp. XX-XX, Year.
+```
+
+## Component Usage
+
+Use the `Citation` component to create properly formatted IEEE citations:
+
+```md
+import { Citation } from '@site/src/components/EducationalComponents';
+
+<Citation
+  id={1}
+  authors={["A. Author", "B. Author"]}
+  title="Title of the Paper"
+  journal="Journal Name"
+  year="Year"
+  volume="X"
+  issue="Y"
+  pages="XX-XX"
+  doi="10.xxxx/xxxxx"
+  link="https://example.com"
+/>
+```
+
+### Required Fields
+
+- `id`: Sequential number for the citation (required)
+- `authors`: Array of author names or string (required)
+- `title`: Title of the paper, article, or book (required)
+- `journal`: Name of the journal, conference, or book (required)
+- `year`: Publication year (required)
+
+### Optional Fields
+
+- `volume`: Volume number for journal articles
+- `issue`: Issue number for journal articles
+- `pages`: Page range (e.g., "123-130")
+- `doi`: Digital Object Identifier
+- `link`: URL to the source (creates an [Online] link)
+
+## Examples
+
+### Journal Article
+
+[1] A. B. Smith, C. D. Jones, and E. F. Garcia, "A study on humanoid robotics," IEEE Transactions on Robotics, vol. 35, no. 4, pp. 827-840, 2019.
+
+### Conference Paper
+
+[2] J. Doe and A. Smith, "Advances in physical AI," in Proc. IEEE Int. Conf. Robotics and Automation (ICRA), pp. 1234-1240, 2022.
+
+### Book
+
+[3] A. Author, B. Author, and C. Author, *Title of Book*. City, Country: Publisher, Year.
+
+## Best Practices
+
+- Always verify the accuracy of citation information
+- Use the most authoritative version of a publication when multiple versions exist
+- Include DOIs when available for journal articles
+- For online sources, include the access date if the content may change over time
+- Cite primary sources whenever possible rather than secondary sources

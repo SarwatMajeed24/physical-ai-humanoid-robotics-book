@@ -1,0 +1,89 @@
+# Site Structure Contract for Physical AI & Humanoid Robotics Course Book
+
+# This contract defines the expected structure and behavior of the documentation site
+
+## Site Endpoints (URL Routes)
+
+### Root and Navigation
+- **GET /** : Homepage with course overview and navigation to modules
+- **GET /docs/** : Documentation index page with sidebar navigation
+- **GET /docs/intro-and-why-humanoids/** : Introduction module page
+- **GET /docs/module1-ros2-nervous-system/** : ROS 2 module page
+- **GET /docs/module2-gazebo-digital-twin/** : Gazebo module page
+- **GET /docs/module3-nvidia-isaac-brain/** : NVIDIA Isaac module page
+- **GET /docs/module4-vision-language-action/** : VLA module page
+- **GET /docs/capstone-autonomous-humanoid/** : Capstone project page
+
+### Static Assets
+- **GET /img/{filename}** : Static images and diagrams
+- **GET /static/{path}** : Other static assets (videos, etc.)
+
+### Search and Navigation
+- **GET /search?q={query}** : Built-in Docusaurus search functionality
+
+## Page Structure Contract
+
+### Required Elements for Each Chapter Page
+1. **Header**
+   - Site title: "Physical AI & Humanoid Robotics"
+   - Navigation breadcrumbs
+   - Dark mode toggle
+
+2. **Main Content Area**
+   - Page title from frontmatter
+   - Learning objectives section
+   - Core concepts and theory
+   - 2-4 Mermaid diagrams
+   - 5-15 line Python/ROS2 code snippets with copy button
+   - Real robot spotlight section with image
+   - Quiz section with Markdown checkboxes
+
+3. **Sidebar**
+   - Course module navigation
+   - Previous/Next chapter links
+   - Table of contents for current page
+
+4. **Footer**
+   - Copyright information
+   - GitHub link
+   - License information (CC-BY-SA-4.0 for content, MIT for code)
+
+## Content Requirements
+
+### Frontmatter Requirements
+Each MDX document must include:
+- `title`: Page title
+- `sidebar_label`: Label for sidebar navigation
+- `sidebar_position`: Order in sidebar (1-6 for main modules)
+- `description`: Meta description for SEO
+- `keywords`: Array of keywords for search
+
+### Accessibility Requirements
+- All images must have alt text
+- Proper heading hierarchy (h1, h2, h3, etc.)
+- Sufficient color contrast (4.5:1 minimum)
+- Keyboard navigation support
+- Screen reader compatibility
+
+### Performance Requirements
+- Page load time < 4 seconds
+- Lighthouse performance score ≥ 90
+- Mobile-responsive design
+- Optimized images (< 500KB total per page)
+
+## Search Functionality Contract
+- Search returns relevant results from all documentation pages
+- Results include page title and content snippet
+- Search works offline (if PWA is enabled)
+- Search results highlight matching terms
+
+## Navigation Contract
+- Breadcrumb navigation showing current location
+- Previous/Next chapter links at bottom of each page
+- Left sidebar with complete course structure
+- Mobile-responsive navigation menu
+
+## Error Handling
+- 404 page for non-existent documentation
+- Error boundaries for React component failures
+- Graceful degradation when JavaScript is disabled
