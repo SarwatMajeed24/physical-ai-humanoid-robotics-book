@@ -24,7 +24,7 @@ function Hero() {
             <Link
               className="button button--secondary button--lg"
               to="/docs/intro-and-why-humanoids">
-              Start with Module 1
+              Start Reading Module 1
             </Link>
           </div>
         </div>

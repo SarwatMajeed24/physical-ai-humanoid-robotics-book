@@ -6,14 +6,14 @@ import styles from './ModuleGrid.module.css';
 const ModuleCards = [
   {
     title: 'Module 1 – ROS 2: The Nervous System',
-    icon: 'https://raw.githubusercontent.com/ros/ros_distro/master/ros.png',
+    icon: 'https://ros.org/img/ros_logo_black.png',
     description: 'Learn the Robot Operating System fundamentals that serve as the backbone for humanoid robotics communication and control.',
     link: '/docs/module1-ros2-nervous-system',
     buttonText: 'Explore →',
   },
   {
     title: 'Module 2 – Gazebo: Digital Twin Simulation',
-    icon: 'https://classic.gazebosim.org/assets/images/gazebo_logo-4c5e48a4.svg',
+    icon: 'https://gazebosim.org/assets/images/gazebo_logo.svg',
     description: 'Master simulation environments for testing humanoid robot behaviors in safe, virtual worlds before real-world deployment.',
     link: '/docs/module2-gazebo-digital-twin',
     buttonText: 'Explore →',

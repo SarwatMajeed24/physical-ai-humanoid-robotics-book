@@ -188,7 +188,7 @@ const config = {
             ],
           },
         ],
-        copyright: `This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Built for Hackathons. Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Course Book. Built with Docusaurus.`,
+        copyright: `Created by <a href="https://github.com/SarwatMajeed24" style="color: #a0aec0;">Sarwat Majeed</a> | This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Built for Hackathons. Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Course Book. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
