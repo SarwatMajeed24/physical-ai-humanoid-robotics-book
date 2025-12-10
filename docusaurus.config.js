@@ -188,7 +188,10 @@ const config = {
             ],
           },
         ],
-        copyright: `Created by <a href="https://github.com/SarwatMajeed24" style="color: #a0aec0;">Sarwat Majeed</a> | This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Built for Hackathons. Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Course Book. Built with Docusaurus.`,
+        copyright: `Created by Sarwat Majeed
+        <a href="https://github.com/SarwatMajeed24" style="color: #a0aec0; margin-left: 1rem; text-decoration: none;" onmouseover="this.style.color='#00D4AA'" onmouseout="this.style.color='#a0aec0'">GitHub</a>
+        <a href="https://www.linkedin.com/in/sarwat-majeed-a6a2891a4/?originalSubdomain=pk" style="color: #a0aec0; margin-left: 1rem; text-decoration: none;" onmouseover="this.style.color='#00D4AA'" onmouseout="this.style.color='#a0aec0'">LinkedIn</a> |
+        This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Built for Hackathons. Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Course Book. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

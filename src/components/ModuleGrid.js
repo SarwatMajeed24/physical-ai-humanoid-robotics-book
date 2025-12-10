@@ -27,7 +27,7 @@ const ModuleCards = [
   },
   {
     title: 'Module 4 – Vision-Language-Action (VLA)',
-    icon: 'https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-with-title.png',
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Hugging_Face_logo.svg',
     description: 'Understand how modern AI models integrate perception, reasoning, and action for embodied intelligence in humanoid robots.',
     link: '/docs/module4-vision-language-action',
     buttonText: 'Explore →',
@@ -41,7 +41,7 @@ const ModuleCards = [
   },
   {
     title: 'Module 6 – Capstone Project',
-    icon: 'https://img.icons8.com/color/96/rocket.png',
+    icon: 'https://img.icons8.com/color/96/rocket--v1.png',
     description: 'Apply all learned concepts to build an autonomous humanoid robot capable of complex tasks and navigation.',
     link: '/docs/capstone-autonomous-humanoid',
     buttonText: 'Explore →',
