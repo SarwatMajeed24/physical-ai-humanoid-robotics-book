@@ -150,3 +150,5 @@ Currently, manual testing is used for documentation rendering and code snippet v
 ---
 
 Made with ❤️ using [Docusaurus](https://docusaurus.io/).
+
+<!-- Updated on: $(date) -->
