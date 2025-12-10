@@ -16,7 +16,7 @@ const config = {
   url: 'https://sweetoo.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub Pages user sites, it is often '/<username>.github.io/<repo-name>/'
-  baseUrl: '/physical-ai-humanoid-robotics-book/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
