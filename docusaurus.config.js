@@ -73,7 +73,7 @@ const config = {
         },
         {
           name: 'theme-color',
-          content: '#2e8555'
+          content: '#0A2540'
         }
       ],
       navbar: {
@@ -82,12 +82,44 @@ const config = {
           alt: 'Physical AI & Humanoid Robotics Logo',
           src: 'img/logo.svg',
         },
+        style: 'dark',
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Course Book',
+          },
+          {
+            type: 'dropdown',
+            position: 'left',
+            label: 'Modules',
+            items: [
+              {
+                label: 'Introduction & Why Humanoids',
+                to: '/docs/intro-and-why-humanoids',
+              },
+              {
+                label: 'ROS 2: The Nervous System',
+                to: '/docs/module1-ros2-nervous-system',
+              },
+              {
+                label: 'Gazebo: Digital Twin Simulation',
+                to: '/docs/module2-gazebo-digital-twin',
+              },
+              {
+                label: 'NVIDIA Isaac: AI Robot Brain',
+                to: '/docs/module3-nvidia-isaac-brain',
+              },
+              {
+                label: 'Vision-Language-Action Models',
+                to: '/docs/module4-vision-language-action',
+              },
+              {
+                label: 'Capstone: Autonomous Humanoid',
+                to: '/docs/capstone-autonomous-humanoid',
+              },
+            ],
           },
           {
             href: 'https://github.com/sweetoo/physical-ai-humanoid-robotics-book',
@@ -100,20 +132,40 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Course Content',
+            title: 'Course Modules',
             items: [
               {
-                label: 'Course Book',
+                label: 'Introduction',
                 to: '/docs/intro-and-why-humanoids',
+              },
+              {
+                label: 'ROS 2 Nervous System',
+                to: '/docs/module1-ros2-nervous-system',
+              },
+              {
+                label: 'Gazebo Digital Twin',
+                to: '/docs/module2-gazebo-digital-twin',
+              },
+              {
+                label: 'NVIDIA Isaac Brain',
+                to: '/docs/module3-nvidia-isaac-brain',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Resources',
             items: [
               {
                 label: 'GitHub',
                 href: 'https://github.com/sweetoo/physical-ai-humanoid-robotics-book',
+              },
+              {
+                label: 'Docusaurus',
+                href: 'https://docusaurus.io',
+              },
+              {
+                label: 'ROS.org',
+                href: 'https://ros.org',
               },
             ],
           },
@@ -121,18 +173,25 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/sweetoo/physical-ai-humanoid-robotics-book',
+                label: 'NVIDIA Isaac',
+                href: 'https://nvidia.com/isaac',
+              },
+              {
+                label: 'Gazebo Simulation',
+                href: 'https://gazebosim.org',
+              },
+              {
+                label: 'Humanoid Robotics',
+                href: 'https://www.ieee-ras.org',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Course Book. Built with Docusaurus.`,
+        copyright: `This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Built for Hackathons. Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Course Book. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
-        additionalLanguages: ['python', 'bash', 'json', 'yaml', 'cpp', 'cmake'],
       },
       // Enable dark mode
       colorMode: {

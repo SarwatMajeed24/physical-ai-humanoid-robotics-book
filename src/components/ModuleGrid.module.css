@@ -1,0 +1,111 @@
+.moduleGrid {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #0A2540;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+  border: 1px solid #00D4AA;
+  border-radius: 12px;
+}
+
+.cardContent {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardIcon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #0A2540;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.cardButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #FF6B35;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.cardButton:hover {
+  background-color: #e55a2b;
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive design */
+@media screen and (max-width: 996px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .moduleGrid {
+    padding: 2rem 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
