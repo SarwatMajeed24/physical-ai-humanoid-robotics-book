@@ -6,7 +6,7 @@
 
 /* Site-wide background and text color */
 body {
-  background-color: #f5f8ff;
+  background-color: #F0FDF4;
 }
 
 /* You can override the default Infima variables here. */
@@ -57,6 +57,49 @@ a {
 .prism-code {
   border-radius: 6px;
   font-size: 0.9rem;
+}
+
+/* Navbar and Footer styling for emerald theme */
+.navbar {
+  background-color: #064E3B !important;
+}
+
+.navbar__brand,
+.navbar__item,
+.navbar__link,
+.navbar__title,
+.navbar__logo {
+  color: white !important;
+}
+
+.navbar__link--active,
+.navbar__link:hover {
+  color: #34D399 !important;
+  text-shadow: 0 0 8px rgba(52, 211, 153, 0.7);
+}
+
+/* GitHub icon styling for navbar */
+.header-github-link::before {
+  filter: invert(1) !important; /* Make the GitHub icon white */
+}
+
+.footer {
+  background-color: #064E3B !important;
+}
+
+/* Author text styling with white color and green glow */
+.footer__copyright,
+.footer .copyright a {
+  color: white !important;
+  text-shadow: 0 0 5px #00C853, 0 0 10px #00E676, 0 0 15px #00C853;
+}
+
+/* Enhanced author section styling with emerald glow on hover */
+.footer .copyright a:hover {
+  color: #34D399 !important;
+  text-shadow: 0 0 10px #34D399, 0 0 20px #10B981;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
 /* Special styling for Python/ROS2 code blocks */

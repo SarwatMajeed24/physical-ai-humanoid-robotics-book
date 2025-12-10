@@ -1,6 +1,8 @@
 .moduleGrid {
   padding: 4rem 0;
-  background-color: #ffffff;
+  background-color: #ECFDF5;
+  border-top: 3px solid;
+  border-image: linear-gradient(90deg, #10B981, #34D399, #10B981) 1;
 }
 
 .sectionTitle {
@@ -20,7 +22,7 @@
 }
 
 .card {
-  background: #FFFFFF;
+  background: #10B981;
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -31,8 +33,8 @@
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(173, 127, 254, 0.6);
-  border: 2px solid transparent;
+  box-shadow: 0 0 25px rgba(52, 211, 153, 0.6);
+  border: 4px solid #34D399;
   position: relative;
   z-index: 1;
 }
@@ -111,7 +113,7 @@
 .cardButton {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: #FF6B35;
+  background-color: #F59E0B;
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -122,10 +124,10 @@
 }
 
 .cardButton:hover {
-  background-color: #e55a2b;
+  background-color: #F97316;
   color: white;
   text-decoration: none;
-  box-shadow: 0 0 15px rgba(255, 107, 53, 0.7);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.7);
   transform: scale(1.05);
 }
 
