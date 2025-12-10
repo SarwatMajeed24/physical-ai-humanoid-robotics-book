@@ -122,8 +122,9 @@ const config = {
             ],
           },
           {
-            href: 'https://github.com/sweetoo/physical-ai-humanoid-robotics-book',
-            label: 'GitHub',
+            href: 'https://github.com/SarwatMajeed24/physical-ai-humanoid-robotics-book',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
             position: 'right',
           },
         ],
