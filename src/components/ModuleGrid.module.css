@@ -67,6 +67,19 @@
   align-items: center;
 }
 
+.thematicIcon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  transition: all 0.3s ease;
+}
+
+.thematicIcon:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
 .cardIcon {
   width: 140px;
   height: 140px;
