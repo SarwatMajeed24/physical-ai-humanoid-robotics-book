@@ -4,6 +4,11 @@
  * work well for content-centric websites.
  */
 
+/* Site-wide background and text color */
+body {
+  background-color: #F0FDF4;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;
@@ -13,6 +18,8 @@
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-gray-900: #1a1a2e;
+  --ifm-font-color-base: #1a1a2e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
@@ -50,6 +57,47 @@ a {
 .prism-code {
   border-radius: 6px;
   font-size: 0.9rem;
+}
+
+/* Navbar and Footer styling for emerald theme */
+.navbar {
+  background-color: #064E3B !important;
+}
+
+.navbar__brand,
+.navbar__item,
+.navbar__link,
+.navbar__title,
+.navbar__logo {
+  color: white !important;
+}
+
+.navbar__link--active,
+.navbar__link:hover {
+  color: #34D399 !important;
+  text-shadow: 0 0 8px rgba(52, 211, 153, 0.7);
+}
+
+/* GitHub icon styling for navbar */
+.header-github-link::before {
+  filter: invert(1) !important; /* Make the GitHub icon white */
+}
+
+.footer {
+  background-color: #052e16 !important;
+  color: #67e8f9 !important;           /* normal text = cyan */
+}
+
+.footer a {
+  color: #FFD60A !important;           /* links = bright yellow */
+  font-weight: 700;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #00FF88 !important;           /* hover = neon green */
+  text-shadow: 0 0 10px #00FF88;
 }
 
 /* Special styling for Python/ROS2 code blocks */

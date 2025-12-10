@@ -5,46 +5,40 @@ import styles from './ModuleGrid.module.css';
 
 const ModuleCards = [
   {
-    title: 'ROS 2: The Nervous System',
-    icon: '/img/robot-arm-icon.jpg',
+    title: 'Module 1 – ROS 2: The Nervous System',
     description: 'Learn the Robot Operating System fundamentals that serve as the backbone for humanoid robotics communication and control.',
     link: '/docs/module1-ros2-nervous-system',
-    buttonText: 'Explore',
+    buttonText: 'Explore →',
   },
   {
-    title: 'Gazebo: Digital Twin Simulation',
-    icon: '/img/globe-icon.jpg',
+    title: 'Module 2 – Gazebo: Digital Twin Simulation',
     description: 'Master simulation environments for testing humanoid robot behaviors in safe, virtual worlds before real-world deployment.',
     link: '/docs/module2-gazebo-digital-twin',
-    buttonText: 'Explore',
+    buttonText: 'Explore →',
   },
   {
-    title: 'NVIDIA Isaac: AI Robot Brain',
-    icon: '/img/brain-icon.jpg',
+    title: 'Module 3 – NVIDIA Isaac: AI Robot Brain',
     description: 'Explore NVIDIA Isaac platform for developing intelligent control systems that power autonomous humanoid behaviors.',
     link: '/docs/module3-nvidia-isaac-brain',
-    buttonText: 'Explore',
+    buttonText: 'Explore →',
   },
   {
-    title: 'Vision-Language-Action (VLA)',
-    icon: '/img/eye-icon.jpg',
+    title: 'Module 4 – Vision-Language-Action (VLA)',
     description: 'Understand how modern AI models integrate perception, reasoning, and action for embodied intelligence in humanoid robots.',
     link: '/docs/module4-vision-language-action',
-    buttonText: 'Explore',
+    buttonText: 'Explore →',
   },
   {
-    title: 'Hardware Integration',
-    icon: '/img/gear-icon.jpg',
-    description: 'Connect software systems to real hardware components, sensors, and actuators for physical humanoid robot control.',
+    title: 'Module 5 – Humanoid Robot',
+    description: 'Real robot spotlight and hardware integration for physical humanoid robot control and deployment.',
     link: '/docs/capstone-autonomous-humanoid',
-    buttonText: 'Explore',
+    buttonText: 'Explore →',
   },
   {
-    title: 'Capstone: Autonomous Humanoid',
-    icon: '/img/trophy-icon.jpg',
+    title: 'Module 6 – Capstone Project',
     description: 'Apply all learned concepts to build an autonomous humanoid robot capable of complex tasks and navigation.',
     link: '/docs/capstone-autonomous-humanoid',
-    buttonText: 'Explore',
+    buttonText: 'Explore →',
   },
 ];
 
@@ -57,7 +51,14 @@ function ModuleGrid() {
           {ModuleCards.map((card, index) => (
             <div key={index} className={styles.card}>
               <div className={styles.cardContent}>
-                <img src={card.icon} alt={card.title} className={styles.cardIcon} />
+                <div className={styles.emojiIcon}>
+                  {index === 0 && '🧠'}  {/* Module 1 → 🧠 */}
+                  {index === 1 && '🌐'}  {/* Module 2 → 🌐 */}
+                  {index === 2 && '⚡'}  {/* Module 3 → ⚡ */}
+                  {index === 3 && '👁️'}  {/* Module 4 → 👁️ */}
+                  {index === 4 && '🤖'}  {/* Module 5 → 🤖 */}
+                  {index === 5 && '🚀'}  {/* Module 6 → 🚀 */}
+                </div>
                 <h3 className={styles.cardTitle}>{card.title}</h3>
                 <p className={styles.cardDescription}>{card.description}</p>
                 <Link className={styles.cardButton} to={card.link}>
