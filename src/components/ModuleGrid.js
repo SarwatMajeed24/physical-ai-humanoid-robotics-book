@@ -6,7 +6,7 @@ import styles from './ModuleGrid.module.css';
 const ModuleCards = [
   {
     title: 'Module 1 – ROS 2: The Nervous System',
-    icon: 'https://ros.org/img/ros_logo_black.png',
+    icon: 'https://raw.githubusercontent.com/ros/ros_distro/master/ros.png',
     description: 'Learn the Robot Operating System fundamentals that serve as the backbone for humanoid robotics communication and control.',
     link: '/docs/module1-ros2-nervous-system',
     buttonText: 'Explore →',
@@ -20,28 +20,28 @@ const ModuleCards = [
   },
   {
     title: 'Module 3 – NVIDIA Isaac: AI Robot Brain',
-    icon: 'https://developer.nvidia.com/sites/default/files/akamai/embedded/isaac-sim/IsaacSim_Logo.png',
+    icon: 'https://developer.nvidia.com/sites/default/files/akamai/embedded/images/isaac/Isaac_Sim_Logo_Color.png',
     description: 'Explore NVIDIA Isaac platform for developing intelligent control systems that power autonomous humanoid behaviors.',
     link: '/docs/module3-nvidia-isaac-brain',
     buttonText: 'Explore →',
   },
   {
     title: 'Module 4 – Vision-Language-Action (VLA)',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Hugging_Face_logo.svg',
+    icon: 'https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg',
     description: 'Understand how modern AI models integrate perception, reasoning, and action for embodied intelligence in humanoid robots.',
     link: '/docs/module4-vision-language-action',
     buttonText: 'Explore →',
   },
   {
     title: 'Module 5 – Humanoid Robot',
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Atlas_robot_%281%29.jpg',
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Atlas_robot_%281%29.jpg/800px-Atlas_robot_%281%29.jpg',
     description: 'Real robot spotlight and hardware integration for physical humanoid robot control and deployment.',
     link: '/docs/capstone-autonomous-humanoid',
     buttonText: 'Explore →',
   },
   {
     title: 'Module 6 – Capstone Project',
-    icon: 'https://img.icons8.com/color/96/rocket--v1.png',
+    icon: 'https://img.icons8.com/plasticine/100/rocket.png',
     description: 'Apply all learned concepts to build an autonomous humanoid robot capable of complex tasks and navigation.',
     link: '/docs/capstone-autonomous-humanoid',
     buttonText: 'Explore →',
