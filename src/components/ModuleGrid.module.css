@@ -69,31 +69,18 @@
   align-items: center;
 }
 
-.thematicIcon {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+.emojiIcon {
+  font-size: 80px;
+  text-align: center;
+  margin: 0 auto 1rem;
+  display: block;
+  line-height: 1;
   transition: all 0.3s ease;
 }
 
-.thematicIcon:hover {
+.emojiIcon:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-}
-
-.cardIcon {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  margin-bottom: 1.5rem;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.cardIcon:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(173, 127, 254, 0.6);
 }
 
 .cardTitle {
