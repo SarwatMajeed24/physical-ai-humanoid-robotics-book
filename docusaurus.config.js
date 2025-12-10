@@ -175,7 +175,7 @@ const config = {
             items: [
               {
                 label: 'NVIDIA Isaac',
-                href: 'https://nvidia.com/isaac',
+                href: 'https://developer.nvidia.com/isaac-sim',
               },
               {
                 label: 'Gazebo Simulation',
