@@ -84,22 +84,20 @@ a {
 }
 
 .footer {
-  background-color: #064E3B !important;
+  background-color: #052e16 !important;
+  color: #67e8f9 !important;           /* normal text = cyan */
 }
 
-/* Author text styling with white color and green glow */
-.footer__copyright,
-.footer .copyright a {
-  color: white !important;
-  text-shadow: 0 0 5px #00C853, 0 0 10px #00E676, 0 0 15px #00C853;
+.footer a {
+  color: #FFD60A !important;           /* links = bright yellow */
+  font-weight: 700;
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
-/* Enhanced author section styling with emerald glow on hover */
-.footer .copyright a:hover {
-  color: #34D399 !important;
-  text-shadow: 0 0 10px #34D399, 0 0 20px #10B981;
-  transform: scale(1.05);
-  transition: all 0.3s ease;
+.footer a:hover {
+  color: #00FF88 !important;           /* hover = neon green */
+  text-shadow: 0 0 10px #00FF88;
 }
 
 /* Special styling for Python/ROS2 code blocks */

@@ -20,7 +20,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'sweetoo', // Usually your GitHub org/user name.
+  organizationName: 'SarwatMajeed24', // Usually your GitHub org/user name.
   projectName: 'physical-ai-humanoid-robotics-book', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -189,8 +189,8 @@ const config = {
           },
         ],
         copyright: `Created by Sarwat Majeed
-        <a href="https://github.com/SarwatMajeed24" style="color: black; margin-left: 1rem; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#00D4AA'; this.style.transform='scale(1.1)'" onmouseout="this.style.color='black'; this.style.transform='scale(1)'">GitHub</a>
-        <a href="https://www.linkedin.com/in/sarwat-majeed-a6a2891a4/?originalSubdomain=pk" style="color: #0077b5; margin-left: 1rem; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#00D4AA'; this.style.transform='scale(1.1)'" onmouseout="this.style.color='#0077b5'; this.style.transform='scale(1)'">LinkedIn</a> |
+        <a href="https://github.com/SarwatMajeed24" style="margin-left: 1rem; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#00D4AA'; this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">GitHub</a>
+        <a href="https://www.linkedin.com/in/sarwat-majeed-a6a2891a4/?originalSubdomain=pk" style="margin-left: 1rem; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#00D4AA'; this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">LinkedIn</a> |
         This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Built for Hackathons. Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Course Book. Built with Docusaurus.`,
       },
       prism: {

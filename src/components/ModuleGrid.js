@@ -57,13 +57,22 @@ function ModuleGrid() {
           {ModuleCards.map((card, index) => (
             <div key={index} className={styles.card}>
               <div className={styles.cardContent}>
-                <img
-                  src={card.icon}
-                  alt={card.title.split('–')[0].trim()}
-                  width="96"
-                  height="96"
-                  style={{ margin: '0 auto 16px', display: 'block' }}
-                />
+                <div
+                  style={{
+                    fontSize: '80px',
+                    textAlign: 'center',
+                    margin: '0 auto 16px',
+                    display: 'block',
+                    lineHeight: '1'
+                  }}
+                >
+                  {index === 0 && '🧠'}  {/* Module 1 → 🧠 */}
+                  {index === 1 && '🌐'}  {/* Module 2 → 🌐 */}
+                  {index === 2 && '⚡'}  {/* Module 3 → ⚡ */}
+                  {index === 3 && '👁️'}  {/* Module 4 → 👁️ */}
+                  {index === 4 && '🤖'}  {/* Module 5 → 🤖 */}
+                  {index === 5 && '🚀'}  {/* Module 6 → 🚀 */}
+                </div>
                 <h3 className={styles.cardTitle}>{card.title}</h3>
                 <p className={styles.cardDescription}>{card.description}</p>
                 <Link className={styles.cardButton} to={card.link}>
