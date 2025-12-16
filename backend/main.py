@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 # Add the current directory to Python path to ensure proper module resolution
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "src"))
 
 # Load environment variables
 load_dotenv()
@@ -37,4 +38,4 @@ async def root():
     return {"message": "RAG Chatbot API is running!"}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8001)

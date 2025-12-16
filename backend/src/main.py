@@ -40,6 +40,3 @@ async def startup_event():
 async def shutdown_event():
     logger.info("Shutting down Free LLM RAG Agent API")
 
-if __name__ == "__main__":
-    logger.info("Starting server on http://localhost:8000")
-    uvicorn.run(app, host="0.0.0.0", port=8000)
