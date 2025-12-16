@@ -60,4 +60,4 @@ venv/
 
 # Local development
 localhost-*
-*.local
+*.local.env
