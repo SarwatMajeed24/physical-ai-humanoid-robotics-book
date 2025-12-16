@@ -31,7 +31,7 @@ const RagChat = () => {
       const selectedText = window.getSelection?.().toString()?.trim() || '';
 
       // Determine which endpoint to use based on the useAgent parameter
-      const endpoint = useAgent ? 'https://physical-ai-humanoid-robotics-book-coral.vercel.app//api/v1/agent/chat' : 'https://physical-ai-humanoid-robotics-book-coral.vercel.app//api/v1/chat';
+      const endpoint = useAgent ? 'https://    physical-ai-humanoid-robotics-book-rose.vercel.app//api/v1/agent/chat' : 'https://physical-ai-humanoid-robotics-book-rose.vercel.app//api/v1/chat';
 
       const response = await fetch(endpoint, {
         method: 'POST',
