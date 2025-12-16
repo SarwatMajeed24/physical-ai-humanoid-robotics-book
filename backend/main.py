@@ -1,17 +1,11 @@
-import sys
 import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-
-# Add the current directory to Python path to ensure proper module resolution
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "src"))
-
-# Load environment variables
-load_dotenv()
-
 from src.api import health, chat
+
+# Load .env file (Vercel pe bhi kaam karega)
+load_dotenv()
 
 app = FastAPI(
     title="RAG Chatbot API",
@@ -19,16 +13,20 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Add CORS middleware
+# CORS middleware – production ke liye specific origin
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://physical-ai-humanoid-robotics-book-lovat.vercel.app", "http://localhost:3000"],  # In production, replace with specific origins
+    allow_origins=[
+        "https://physical-ai-humanoid-robotics-book-lovat.vercel.app",
+        "https://physical-ai-humanoid-robotics-book-5b9e-26ejgwi0o.vercel.app",
+        "http://localhost:3000"  # local development ke liye
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Include API routes
+# Include API routers
 app.include_router(health.router, prefix="/api/v1", tags=["health"])
 app.include_router(chat.router, prefix="/api/v1", tags=["chat"])
 
