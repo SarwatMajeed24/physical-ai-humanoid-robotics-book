@@ -212,6 +212,12 @@ See `.specify/memory/constitution.md` for code quality, testing, performance, se
 ## Active Technologies
 - JavaScript/TypeScript, Node.js v18+ for Docusaurus v3, Python 3.8+ for ROS 2 examples + Docusaurus v3 with classic preset, React v18, Node.js, npm, MDX v2/v3 (001-specify-project-ai)
 - Static file storage in Git repository, images in /static/img, documentation in /docs (001-specify-project-ai)
+- Python 3.11, JavaScript/TypeScript for frontend components + FastAPI, Cohere Python SDK, Qdrant Python client, React 18, Docusaurus v3 (002-rag-chatbot)
+- Qdrant Cloud vector database (for embeddings), temporary local storage for processing (002-rag-chatbot)
+- Python 3.11, JavaScript/TypeScript for frontend components + FastAPI, Google Gemini SDK, Qdrant Python client, React 18, Docusaurus v3 (001-free-llm-rag-agent)
+- Qdrant Cloud vector database for document embeddings, in-memory session storage (001-free-llm-rag-agent)
+- Python 3.11 (backend), JavaScript/TypeScript (frontend) + FastAPI (backend), Docusaurus (frontend), React 18 (widget) (003-local-frontend-backend-integration)
+- N/A (no persistent storage for this integration layer) (003-local-frontend-backend-integration)
 
 ## Recent Changes
 - 001-specify-project-ai: Added JavaScript/TypeScript, Node.js v18+ for Docusaurus v3, Python 3.8+ for ROS 2 examples + Docusaurus v3 with classic preset, React v18, Node.js, npm, MDX v2/v3

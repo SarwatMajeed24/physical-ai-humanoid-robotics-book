@@ -1,0 +1,104 @@
+# API Contract: RAG Chatbot Backend
+
+## Chat Endpoint
+
+### POST /chat
+
+**Description**: Process user query and return RAG-generated response
+
+**Request**:
+```json
+{
+  "query": "string (required) - User's question about book content",
+  "session_id": "string (optional) - Session identifier for conversation context",
+  "selected_text": "string (optional) - Text selected by user on the current page",
+  "temperature": "number (optional, default: 0.7) - Response creativity parameter"
+}
+```
+
+**Response (Success 200)**:
+```json
+{
+  "response": "string - RAG-generated answer to the user's query",
+  "session_id": "string - Session identifier",
+  "sources": [
+    {
+      "url": "string - Source URL of the referenced content",
+      "title": "string - Title of the referenced content",
+      "snippet": "string - Relevant snippet from the content"
+    }
+  ],
+  "timestamp": "string - ISO 8601 timestamp of the response"
+}
+```
+
+**Response (Error 400)**:
+```json
+{
+  "error": "string - Error message describing the issue",
+  "code": "string - Error code"
+}
+```
+
+**Response (Error 500)**:
+```json
+{
+  "error": "string - Internal server error message",
+  "code": "string - Error code"
+}
+```
+
+**Authentication**: None required (public endpoint)
+
+---
+
+## Health Check Endpoint
+
+### GET /health
+
+**Description**: Check the health status of the RAG service
+
+**Request**: No request body required
+
+**Response (Success 200)**:
+```json
+{
+  "status": "string - Service status (ok)",
+  "timestamp": "string - ISO 8601 timestamp",
+  "dependencies": {
+    "cohere": "string - Cohere API status",
+    "qdrant": "string - Qdrant connection status",
+    "database": "string - Database connection status"
+  }
+}
+```
+
+---
+
+## Status Endpoint
+
+### GET /status
+
+**Description**: Get the indexing and service status
+
+**Request**: No request body required
+
+**Response (Success 200)**:
+```json
+{
+  "status": "string - Overall service status",
+  "indexed_content_count": "integer - Number of content chunks indexed",
+  "last_crawl_time": "string - ISO 8601 timestamp of last crawl",
+  "qdrant_collection_status": "string - Status of Qdrant collection"
+}
+```
+
+---
+
+## Error Codes
+
+- `INVALID_QUERY`: Query is empty or invalid
+- `EMBEDDING_ERROR`: Error occurred during embedding process
+- `RETRIEVAL_ERROR`: Error occurred during content retrieval
+- `GENERATION_ERROR`: Error occurred during response generation
+- `SERVICE_UNAVAILABLE`: External service (Cohere/Qdrant) unavailable

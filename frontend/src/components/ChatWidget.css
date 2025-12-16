@@ -1,0 +1,55 @@
+.chat-widget {
+  position: relative;
+  z-index: 9999;
+}
+
+.chat-popup {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 400px;
+  height: 600px;
+  max-height: 80vh;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  z-index: 10000;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-error {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 9998;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .chat-popup {
+    width: calc(100vw - 40px);
+    height: 50vh;
+    bottom: 90px;
+    right: 20px;
+    left: 20px;
+  }
+}

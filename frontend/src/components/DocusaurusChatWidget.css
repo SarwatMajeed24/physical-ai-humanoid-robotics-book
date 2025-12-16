@@ -1,0 +1,11 @@
+.docusaurus-chat-widget {
+  position: relative;
+}
+
+.chat-widget-theme--light {
+  /* Light theme specific styles if needed */
+}
+
+.chat-widget-theme--dark {
+  /* Dark theme specific styles if needed */
+}

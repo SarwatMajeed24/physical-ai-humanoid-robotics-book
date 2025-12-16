@@ -1,0 +1,229 @@
+openapi: 3.0.0
+info:
+  title: Free LLM RAG Agent API
+  description: API for the Free LLM RAG Agent using Google Gemini and Qdrant Cloud
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000/api/v1
+    description: Local development server
+
+paths:
+  /chat:
+    post:
+      summary: Process user query and return RAG-generated response
+      description: Sends a user query to the Gemini-based RAG agent and returns a response based on book content
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+      responses:
+        '200':
+          description: Successful response from the RAG agent
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+        '400':
+          description: Bad request - invalid input parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /sessions/{session_id}:
+    get:
+      summary: Get session information
+      description: Retrieve information about a specific chat session
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Unique identifier for the session
+      responses:
+        '200':
+          description: Session information retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionInfo'
+        '404':
+          description: Session not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /sessions/{session_id}:
+    delete:
+      summary: Delete a session
+      description: Remove a specific chat session and its associated data
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Unique identifier for the session
+      responses:
+        '200':
+          description: Session deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '404':
+          description: Session not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    ChatRequest:
+      type: object
+      required:
+        - query
+      properties:
+        query:
+          type: string
+          description: The user's question or input text
+          example: "What is ROS 2?"
+        selected_text:
+          type: string
+          description: Text selected on the page by the user (optional)
+          example: "ROS 2 is a flexible framework for writing robot software."
+        session_id:
+          type: string
+          description: Session identifier (generated if not provided)
+          example: "550e8400-e29b-41d4-a716-446655440000"
+
+    ChatResponse:
+      type: object
+      required:
+        - response
+        - session_id
+        - sources
+        - timestamp
+      properties:
+        response:
+          type: string
+          description: The generated response from the Gemini agent
+          example: "ROS 2 (Robot Operating System 2) is a flexible framework for writing robot software..."
+        session_id:
+          type: string
+          description: Session identifier for the conversation
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        sources:
+          type: array
+          items:
+            $ref: '#/components/schemas/SourceReference'
+          description: Sources referenced in the response
+        timestamp:
+          type: string
+          format: date-time
+          description: When the response was generated
+
+    SourceReference:
+      type: object
+      properties:
+        url:
+          type: string
+          description: URL of the source document
+          example: "https://physical-ai-humanoid-robotics-book/robotics-intro"
+        title:
+          type: string
+          description: Title of the source document
+          example: "Introduction to Robotics"
+        snippet:
+          type: string
+          description: Excerpt from the source document
+          example: "Robotics is an interdisciplinary branch of engineering..."
+
+    SessionInfo:
+      type: object
+      required:
+        - session_id
+        - created_at
+        - messages
+      properties:
+        session_id:
+          type: string
+          description: Unique identifier for the session
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        created_at:
+          type: string
+          format: date-time
+          description: When the session was created
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+          description: List of messages in the session
+
+    Message:
+      type: object
+      required:
+        - message_id
+        - role
+        - content
+        - timestamp
+      properties:
+        message_id:
+          type: string
+          description: Unique identifier for the message
+          example: "650e8400-e29b-41d4-a716-446655440001"
+        role:
+          type: string
+          enum: [user, assistant]
+          description: The role of the message sender
+        content:
+          type: string
+          description: The text content of the message
+        timestamp:
+          type: string
+          format: date-time
+          description: When the message was created
+        selected_text:
+          type: string
+          description: Text selected by user when message was sent (user messages only)
+        sources:
+          type: array
+          items:
+            $ref: '#/components/schemas/SourceReference'
+          description: Sources referenced in response (assistant messages only)
+
+    ErrorResponse:
+      type: object
+      required:
+        - message
+        - error_code
+      properties:
+        message:
+          type: string
+          description: Human-readable error message
+          example: "Invalid input parameters"
+        error_code:
+          type: string
+          description: Machine-readable error code
+          example: "INVALID_INPUT"
+
+    SuccessResponse:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          description: Success message
+          example: "Session deleted successfully"

@@ -1,8 +1,8 @@
-# Physical AI & Humanoid Robotics
+# Physical AI & Humanoid Robotics - with RAG Chatbot
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/sweetoo/physical-ai-humanoid-robotics-book)
 
-A comprehensive open-source course book on Physical AI and Humanoid Robotics, built with Docusaurus v3 and deployed on GitHub Pages.
+A comprehensive open-source course book on Physical AI and Humanoid Robotics, built with Docusaurus v3 and deployed on GitHub Pages. Now includes an AI-powered chatbot for interactive learning!
 
 ## 🚀 Quick Start
 
@@ -35,6 +35,53 @@ npm start
    ```bash
    npm start
    ```
+
+## 🤖 RAG Chatbot Integration
+
+This course now features an AI-powered chatbot that allows you to ask questions about the book content and receive accurate, context-aware answers.
+
+### Features
+
+- 🤖 **AI-Powered Q&A**: Ask questions about the book content and get accurate answers
+- 📚 **Book-Specific Knowledge**: Trained on the Physical AI & Humanoid Robotics book content
+- 🔍 **Context-Aware**: Select text on the page and ask questions about it
+- 💬 **Chat Interface**: Easy-to-use chat interface with conversation history
+- 📱 **Responsive**: Works on desktop, tablet, and mobile devices
+- 🔌 **Docusaurus Integration**: Seamless integration with the documentation site
+
+### Backend Setup (for development)
+
+1. Navigate to the backend directory:
+```bash
+cd backend
+```
+
+2. Create a virtual environment and install dependencies:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+3. Create a `.env` file with your API keys:
+```env
+COHERE_API_KEY=your_cohere_api_key_here
+QDRANT_URL=your_qdrant_cloud_url_here
+QDRANT_API_KEY=your_qdrant_api_key_here
+BOOK_SITEMAP_URL=https://physical-ai-humanoid-robotics-book-lovat.vercel.app/sitemap.xml
+```
+
+4. Index the book content:
+```bash
+python index_content.py
+```
+
+5. Run the backend server:
+```bash
+uvicorn main:app --reload
+```
+
+The chatbot will be available as a floating widget on the documentation pages.
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
