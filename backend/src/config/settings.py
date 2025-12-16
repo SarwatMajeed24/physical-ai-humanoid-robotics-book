@@ -16,7 +16,7 @@ class Settings:
     BOOK_SITEMAP_URL: str = os.getenv("BOOK_SITEMAP_URL", "https://physical-ai-humanoid-robotics-book-lovat.vercel.app/sitemap.xml")
 
     # Application settings
-    APP_NAME: str = "Free LLM RAG Agent API"
+    APP_NAME: str = "RAG Chatbot API"
     API_V1_STR: str = "/api/v1"
 
     # Qdrant collection name

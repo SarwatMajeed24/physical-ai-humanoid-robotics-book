@@ -1,6 +1,6 @@
-# Free LLM RAG Agent Backend
+# RAG Chatbot Backend
 
-Backend API for the Free LLM RAG Agent using Cohere and Qdrant Cloud.
+Backend API for the RAG Chatbot for Physical AI Book using Cohere and Qdrant Cloud.
 
 ## Setup
 
@@ -17,9 +17,9 @@ cp .env.example .env
 
 3. Run the server:
 ```bash
-python -m backend.src.main
+python start_server.py
 # Or with uvicorn directly:
-uvicorn backend.src.main:app --reload --port 8000
+uvicorn main:app --reload --port 8001
 ```
 
 ## API Endpoints
@@ -31,7 +31,7 @@ uvicorn backend.src.main:app --reload --port 8000
 
 ## Features
 
-- **Free LLM**: Uses Cohere command-r-08-2024 (free tier)
+- **Cohere LLM**: Uses Cohere command-r-08-2024 (free tier)
 - **Embeddings**: Uses Cohere embed-english-v3.0 (free tier)
 - **Vector Storage**: Qdrant Cloud for document storage and retrieval
 - **Agent Tool Use**: Advanced agent with Qdrant retrieval capabilities
